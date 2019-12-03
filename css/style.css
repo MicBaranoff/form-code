@@ -372,6 +372,10 @@ form .choises .choise input[type=checkbox]:checked + span:after {
   line-height: 26px;
   left: 5px;
 }
+form .choises-fieldsets .form__country-block legend {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
 form .form__total {
   width: 100%;
   color: #303133;

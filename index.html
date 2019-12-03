@@ -30,7 +30,7 @@
 
 
             <div class="form-inner-wrapper">
-                <label>Company name: <input type="text" minlength=2 name="Company name" required
+                <label>Company name: <input type="text" minlength=2 name="Company name"
                         placeholder="Company name"></label><br />
                 <label>Address: <input type="text" name="Address" placeholder="Some adress"></label><br />
                 <label>City: <input type="text" name="City" placeholder="Some city"></label><br />
@@ -214,12 +214,12 @@
             <p>We collect your information for communication with you regarding order related cases.&nbsp;Please, check
                 our <a href="#ex1" rel="modal:open">Privacy Policy</a> to know how we use your data.</p>
             <label>
-                <input type="checkbox" required name="terms" value="terms"><span></span>
+                <input onchange="checkParams()" type="checkbox" required id="checkedForm" name="terms" value="terms"><span></span>
                 <p>I agree with your <a href="#ex2" rel="modal:open">Terms of Service</a> and consent to my information
                     being stored for the above purpose.</p>
             </label>
             <label>
-                <input type="checkbox" required name="mailing" value="mailing"><span></span>
+                <input type="checkbox" name="mailing" value="mailing"><span></span>
                 <p>I would like to receive promotional emails from time to time. All emails include an unsubscribe
                     links. <span>(Optional)</span></p>
             </label>
@@ -250,7 +250,7 @@ function checkParams() {
   var input4 = $('input#asin').val();
   var input5 = $('input#campaignname').val();
 
-  if(input1.length != 0 && input2.length != 0 && input3.length != 0 && input4.length != 0 && input5.length != 0) {
+  if(input1.length != 0 && input2.length != 0 && input3.length != 0 && input4.length != 0 && input5.length != 0 && $("#checkedForm").is(':checked')) {
        
        $("input[type='submit']").removeAttr('disabled');                
     } else {
