@@ -285,7 +285,8 @@ form #submit {
 }
 form #submit:disabled {
   pointer-events: none;
-  opacity: 0.4;
+  background: #8d8d8f;
+  opacity: 0.8;
 }
 form #submit:hover {
   background: -o-linear-gradient(95.17deg, rgba(213, 116, 7, 0.917286) -11.79%, #9f1497 100.18%);
