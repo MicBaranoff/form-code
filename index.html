@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <form action="" id="mainForm">
+        <div class="form-inner-holder">
+            <div class="form-inner-wrapper">
+                <label>First Name <span class="necessarily">*</span> <input onkeyup="checkParams()" type="text" id="firstname" name="First Name" required
+                        placeholder="John Smith"></label><br />
+                <label>Last Name <span class="necessarily">*</span> <input onkeyup="checkParams()" type="text" id="lastname" name="Last Name" required
+                        placeholder="John Smith"></label><br />
+                <label>Email: <span class="necessarily">*</span> <input onkeyup="checkParams()" type="email" id="email" name="EMail" required
+                        placeholder="treto@gmail.com"></label><br />
+                <label>ASIN: <span class="necessarily">*</span> <input onkeyup="checkParams()" type="text" id="asin" name="ASIN" required
+                        placeholder="1251515"></label><br />
+                <label>Campaign name: <span class="necessarily">*</span> <input onkeyup="checkParams()" type="text" id="campaignname" name="Campaign name"
+                        required placeholder=""></label><br />
+            </div>
+
+
+
+            <div class="form-inner-wrapper">
+                <label>Company name: <input type="text" minlength=2 name="Company name" required
+                        placeholder="Company name"></label><br />
+                <label>Address: <input type="text" name="Address" placeholder="Some adress"></label><br />
+                <label>City: <input type="text" name="City" placeholder="Some city"></label><br />
+                <label>Region/State: <input type="text" name="Region/State" placeholder="Some region"></label><br />
+                <label>Zip: <input type="text" name="Zip" placeholder="12345"></label><br />
+            </div>
+        </div>
+
+
+
+        <fieldset class="choises-box" data-form-elem="country-selector">
+            <legend>Choose country</legend>
+            <div class="choises">
+                <label class="choise">United Kingdom <input  type="checkbox" name="country"
+                        value="uk"><span></span></label>
+                <label class="choise">Germany <input  type="checkbox" name="country" value="de"><span></span></label>
+                <label class="choise">France <input  type="checkbox" name="country" value='fr'><span></span></label>
+                <label class="choise">Italy <input  type="checkbox" name="country" value='it'><span></span></label>
+                <label class="choise">Spain <input  type="checkbox" name="country" value='es'><span></span></label>
+            </div>
+
+        </fieldset>
+
+        <div class="choises-fieldsets">
+            <fieldset class="form__country-block" data-form-elem="country-block" hidden data-country="uk">
+                <legend>United Kingdom</legend>
+                <label>Link <span class="necessarily">*</span>
+                    <input  type="text" name="uk_link" data-country="uk">
+                    <span class="tooltips"
+                        tooltip="Put here the link to the product page on Amazon. You can use Super-URLs like 2-Step or Filter-URL if you want"
+                        tooltip-position="top"><span>Put here the link to the product page on Amazon. You can use
+                            Super-URLs like 2-Step or Filter-URL if you want</span></span></label>
+                <br>
+                <label>Keyword <span class="necessarily">*</span>
+                    <input  type="text" name="uk_keyword"><span class="tooltips"
+                        tooltip="Put here the keyword you want to rank for - our testers will search manually for it"
+                        tooltip-position="top"><span>Put here the keyword you want to rank for - our testers will search
+                            manually for it</span></span></label>
+                <br>
+                <label>Page <span class="necessarily">*</span>
+                    <input  type="text" name="uk_page"><span class="tooltips"
+                        tooltip="Put here the page number for the keyword you’ve mentioned in the previous step to help testers to find your product"
+                        tooltip-position="top"><span>Put here the page number for the keyword you’ve mentioned in the
+                            previous step to help testers to find your product"</span></span></label>
+                <br>
+                <label>Price <span class="necessarily">*</span>
+                    <input  type="number" step="0.01"  data-form-elem='price' data-currency='GBP' value=0.00 name="uk_price"  title="This should be a number with up to 2 decimal places."><span class="tooltips"
+                        tooltip="Put here product price on Amazon testers will pay for your product. You agree not to change the price until the campaign ends!"
+                        tooltip-position="top"><span>Put here product price on Amazon testers will pay for your product.
+                            You agree not to change the price until the campaign ends!</span></span></label>
+                <br>
+                <label>Quantity <span class="necessarily">*</span>
+                    <input  type="number" data-form-elem="reviews" value="0" name="uk_reviews"><span
+                        class="tooltips"
+                        tooltip="Put here the number of reviews you want to buy for this particular market."
+                        tooltip-position="top"> <span>Put here the number of reviews you want to buy for this particular
+                            market.</span></span></label>
+                <br>
+            </fieldset>
+            <fieldset class="form__country-block" data-form-elem="country-block" hidden data-country="de">
+                <legend>Germany</legend>
+                <label>Link <span class="necessarily">*</span>
+                    <input  type="text" name="de_link" data-country="de"><span class="tooltips"
+                        tooltip="Put here the number of reviews you want to buy for this particular market."
+                        tooltip-position="top"><span>Put here the number of reviews you want to buy for this particular market.</span></span></label>
+                <br>
+                <label>Keyword <span class="necessarily">*</span>
+                    <input  type="text" name="de_keyword"><span class="tooltips"
+                        tooltip="Put here the keyword you want to rank for - our testers will search manually for it"
+                        tooltip-position="top"><span>Put here the keyword you want to rank for - our testers will search manually for it</span></span></label>
+                <br>
+                <label>Page <span class="necessarily">*</span>
+                    <input  type="text" name="de_page"><span class="tooltips"
+                        tooltip="Put here the page number for the keyword you’ve mentioned in the previous step to help testers to find your product"
+                        tooltip-position="top"><span>Put here the page number for the keyword you’ve mentioned in the previous step to help testers to find your product</span></span></label>
+                <br>
+                <label>Price <span class="necessarily">*</span>
+                    <input  type="number" step="0.01"  data-form-elem='price' data-currency='GBP' value=0.00 name="de_price"  title="This should be a number with up to 2 decimal places."><span class="tooltips"
+                        tooltip="Put here product price on Amazon testers will pay for your product. You agree not to change the price until the campaign ends!"
+                        tooltip-position="top"><span>Put here product price on Amazon testers will pay for your product. You agree not to change the price until the campaign ends!</span></span></label>
+                <br>
+                <label>Quantity <span class="necessarily">*</span>
+                    <input  type="number" data-form-elem="reviews" value="0" name="de_reviews"><span
+                        class="tooltips"
+                        tooltip="Put here the number of reviews you want to buy for this particular market."
+                        tooltip-position="top"><span>Put here the number of reviews you want to buy for this particular market.</span></span></label>
+                <br>
+            </fieldset>
+            <fieldset class="form__country-block" data-form-elem="country-block" hidden data-country="fr">
+                <legend>France</legend>
+                <label>Link <span class="necessarily">*</span>
+                    <input  type="text" name="fr_link" data-country="fr"><span class="tooltips"
+                        tooltip="Put here the link to the product page on Amazon. You can use Super-URLs like 2-Step or Filter-URL if you want"
+                        tooltip-position="top"><span>Put here the link to the product page on Amazon. You can use Super-URLs like 2-Step or Filter-URL if you want</span></span></label>
+                <br>
+                <label>Keyword <span class="necessarily">*</span>
+                    <input  type="text" name="fr_keyword"><span class="tooltips"
+                        tooltip="Put here the keyword you want to rank for - our testers will search manually for it"
+                        tooltip-position="top"><span>Put here the keyword you want to rank for - our testers will search manually for it</span></span></label>
+                <br>
+                <label>Page <span class="necessarily">*</span>
+                    <input  type="text" name="fr_page"><span class="tooltips"
+                        tooltip="Put here the page number for the keyword you’ve mentioned in the previous step to help testers to find your product"
+                        tooltip-position="top"><span>Put here the page number for the keyword you’ve mentioned in the previous step to help testers to find your product</span></span></label>
+                <br>
+                <label>Price € <span class="necessarily">*</span>
+                    <input  type="number" step="0.01"  data-form-elem='price' data-currency='GBP' value=0.00 name="fr_price"  title="This should be a number with up to 2 decimal places."><span class="tooltips"
+                        tooltip="Put here product price on Amazon testers will pay for your product. You agree not to change the price until the campaign ends!"
+                        tooltip-position="top"><span>Put here product price on Amazon testers will pay for your product. You agree not to change the price until the campaign ends!</span></span></label>
+                <br>
+                <label>Quantity <span class="necessarily">*</span>
+                    <input  type="number" data-form-elem="reviews" value="0" name="fr_quantity"><span
+                        class="tooltips"
+                        tooltip="Put here the number of reviews you want to buy for this particular market."
+                        tooltip-position="top"><span>Put here the number of reviews you want to buy for this particular market.</span></span></label>
+                <br>
+            </fieldset>
+            <fieldset class="form__country-block" data-form-elem="country-block" hidden data-country="it">
+                <legend>Italy</legend>
+                <label>Link <span class="necessarily">*</span>
+                    <input  type="text" name="it_link" data-country="it"><span class="tooltips"
+                        tooltip="Put here the link to the product page on Amazon. You can use Super-URLs like 2-Step or Filter-URL if you want"
+                        tooltip-position="top"><span>Put here the link to the product page on Amazon. You can use Super-URLs like 2-Step or Filter-URL if you want</span></span></label>
+                <br>
+                <label>Keyword <span class="necessarily">*</span>
+                    <input  type="text" name="it_keyword"><span class="tooltips"
+                        tooltip="Put here the keyword you want to rank for - our testers will search manually for it"
+                        tooltip-position="top"><span>Put here the keyword you want to rank for - our testers will search manually for it</span></span></label>
+                <br>
+                <label>Page <span class="necessarily">*</span>
+                    <input  type="text" name="it_page"><span class="tooltips"
+                        tooltip="Put here the page number for the keyword you’ve mentioned in the previous step to help testers to find your product"
+                        tooltip-position="top"><span>Put here the page number for the keyword you’ve mentioned in the previous step to help testers to find your product</span></span></label>
+                <br>
+                <label>Price € <span class="necessarily">*</span>
+                    <input  type="number" step="0.01"  data-form-elem='price' data-currency='GBP' value=0.00 name="it_price"  title="This should be a number with up to 2 decimal places."><span class="tooltips"
+                        tooltip="Put here product price on Amazon testers will pay for your product. You agree not to change the price until the campaign ends!"
+                        tooltip-position="top"><span>Put here product price on Amazon testers will pay for your product. You agree not to change the price until the campaign ends!</span></span></label>
+                <br>
+                <label>Quantity <span class="necessarily">*</span>
+                    <input  type="number" data-form-elem="reviews" value="0" name="it_reviews"><span
+                        class="tooltips"
+                        tooltip="Put here the number of reviews you want to buy for this particular market."
+                        tooltip-position="top"><span>Put here the number of reviews you want to buy for this particular market.</span></span></label>
+                <br>
+            </fieldset>
+            <fieldset class="form__country-block" data-form-elem="country-block" hidden data-country="es">
+                <legend>Spain</legend>
+                <label>Link <span class="necessarily">*</span>
+                    <input  type="text" name="es_link" data-country="es"><span class="tooltips"
+                        tooltip="Put here the link to the product page on Amazon. You can use Super-URLs like 2-Step or Filter-URL if you want"
+                        tooltip-position="top"><span>Put here the link to the product page on Amazon. You can use Super-URLs like 2-Step or Filter-URL if you want</span></span></label>
+                <br>
+                <label>Keyword <span class="necessarily">*</span>
+                    <input  type="text" name="es_keyword"><span class="tooltips"
+                        tooltip="Put here the keyword you want to rank for - our testers will search manually for it"
+                        tooltip-position="top"><span>Put here the keyword you want to rank for - our testers will search manually for it</span></span></label>
+                <br>
+                <label>Page <span class="necessarily">*</span>
+                    <input  type="text" name="es_page"><span class="tooltips"
+                        tooltip="Put here the page number for the keyword you’ve mentioned in the previous step to help testers to find your product"
+                        tooltip-position="top"><span>Put here the page number for the keyword you’ve mentioned in the previous step to help testers to find your product</span></span></label>
+                <br>
+                <label>Price € <span class="necessarily">*</span>
+                    <input  type="number" step="0.01"  data-form-elem='price' data-currency='GBP' value=0.00 name="es_price"  title="This should be a number with up to 2 decimal places."><span class="tooltips"
+                        tooltip="Put here product price on Amazon testers will pay for your product. You agree not to change the price until the campaign ends!"
+                        tooltip-position="top"><span>Put here product price on Amazon testers will pay for your product. You agree not to change the price until the campaign ends!</span></span></label>
+                <br>
+                <label>Quantity <span class="necessarily">*</span>
+                    <input  type="number" data-form-elem="reviews" value="0" name="es_quantity"><span
+                        class="tooltips"
+                        tooltip="Put here the number of reviews you want to buy for this particular market."
+                        tooltip-position="top"><span>Put here the number of reviews you want to buy for this particular market.</span></span></label>
+                <br>
+            </fieldset>
+        </div>
+
+        <div class="form__total">Total: <span id="total"></span></div>
+
+        <div class="form-info-checkboxes">
+            <p>We collect your information for communication with you regarding order related cases.&nbsp;Please, check
+                our <a href="#ex1" rel="modal:open">Privacy Policy</a> to know how we use your data.</p>
+            <label>
+                <input type="checkbox" required name="terms" value="terms"><span></span>
+                <p>I agree with your <a href="#ex2" rel="modal:open">Terms of Service</a> and consent to my information
+                    being stored for the above purpose.</p>
+            </label>
+            <label>
+                <input type="checkbox" required name="mailing" value="mailing"><span></span>
+                <p>I would like to receive promotional emails from time to time. All emails include an unsubscribe
+                    links. <span>(Optional)</span></p>
+            </label>
+        </div>
+
+        <input type="submit" disabled id="submit" value="SUBMIT">
+    </form>
+    <div id="form-result">
+        <div class="bg"></div>
+        <div class="modal">
+            
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.933899 21.6357C0.933899 9.77553 10.5934 0.116013 22.4536 0.116013C34.3138 0.116013 43.9733 9.77553 43.9733 21.6357C43.9733 33.4959 34.3138 43.1555 22.4536 43.1555C10.5934 43.1555 0.933899 33.4959 0.933899 21.6357ZM39.913 21.6357C39.913 11.9703 32.1188 4.17634 22.4536 4.17634C12.7882 4.17634 4.99422 11.9703 4.99422 21.6357C4.99422 31.3012 12.7882 39.0951 22.4536 39.0951C32.1191 39.0951 39.913 31.3012 39.913 21.6357ZM30.7644 13.7147C31.1293 13.3372 31.6304 13.1152 32.1602 13.0993L32.1604 13.1021C32.9946 13.0767 33.7623 13.5684 34.0891 14.3392C34.4126 15.1101 34.235 16.0014 33.6323 16.5851L20.6392 29.5781C19.8494 30.3712 18.5615 30.3712 17.7717 29.5781L11.2751 23.0816C10.8786 22.7042 10.6566 22.1839 10.6502 21.6383C10.6439 21.0927 10.8596 20.5661 11.2434 20.1823C11.6305 19.7953 12.1539 19.5828 12.6995 19.5859C13.245 19.5923 13.7653 19.8175 14.1427 20.2108L19.2055 25.2704L30.7644 13.7147Z" fill="#06B10D"/>
+    </svg>
+    
+
+            <p>Wow! Thanks for the submitted order form!
+                Please, check your mail inbox (or spam) folder for confirmation and invoice.</p>
+            <a class="btnMcl">Okay</a>
+        </div>
+
+    </div>
+<script>
+function checkParams() {
+  var input1 = $('input#firstname').val();
+  var input2 = $('input#lastname').val();
+  var input3 = $('input#email').val();
+  var input4 = $('input#asin').val();
+  var input5 = $('input#campaignname').val();
+
+  if(input1.length != 0 && input2.length != 0 && input3.length != 0 && input4.length != 0 && input5.length != 0) {
+       
+       $("input[type='submit']").removeAttr('disabled');                
+    } else {
+        $("input[type='submit']").attr('disabled','disabled');
+    }
+
+  };
+</script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/scripts.all.js"></script>
+</body>
+
+</html>

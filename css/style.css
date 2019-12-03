@@ -1,0 +1,638 @@
+@font-face {
+  font-family: Roboto;
+  src: url('../fonts/Roboto-Regular.ttf');
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+* {
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: Roboto;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.form__country-block[hidden] {
+  visibility: hidden;
+}
+input[filled]:required:invalid {
+  border-bottom: 2px solid #d63031;
+  /*  Это пример. Тут можно писать тот вид который должно принимать поле не прошедшее валидацию  */
+}
+form {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+}
+form label {
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d8d8f;
+  position: relative;
+  margin-bottom: 15px;
+}
+form label .tooltips {
+  position: absolute;
+  display: inline;
+  width: 19px;
+  height: 19px;
+  top: 0;
+  right: 0;
+  background: #dadada;
+  border-radius: 50%;
+}
+form label .tooltips:before {
+  content: '?';
+  position: absolute;
+  font-size: 16px;
+  font-weight: 700;
+  left: 5.5px;
+  top: -1px;
+  color: #fff;
+}
+form label .tooltips span {
+  font: 300 12px 'Open Sans', sans-serif;
+  position: absolute;
+  color: #fff;
+  background: #303133;
+  padding: 5px 10px;
+  width: 140px;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s, -webkit-transform 0.3s;
+  transition: opacity 0.6s, -webkit-transform 0.3s;
+  -o-transition: transform 0.3s, opacity 0.6s;
+  transition: transform 0.3s, opacity 0.6s;
+  transition: transform 0.3s, opacity 0.6s, -webkit-transform 0.3s;
+}
+form label .tooltips span:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+form label .tooltips[tooltip-position=top] span {
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+}
+form label .tooltips[tooltip-position=top] span:after {
+  top: 100%;
+  left: 50%;
+  border-top: 8px solid #303133;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+form label .tooltips[tooltip-position=top]:hover span {
+  bottom: 30px;
+  left: 50%;
+  margin-left: -80px;
+  visibility: visible;
+  opacity: 1;
+  z-index: 999;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+form label .necessarily {
+  color: #d63031;
+}
+form input {
+  width: 100%;
+  height: 47px;
+  border-radius: 4px;
+  border: 1px solid #dadada;
+  color: #dadada;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  padding: 0 10px;
+}
+form input {
+  margin-top: 2px;
+  outline: 0;
+  color: #505050;
+}
+form input:focus {
+  border: 1px solid #4ae6ff;
+}
+form input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 50px #fff !important;
+}
+form input::-webkit-input-placeholder {
+  color: #dadada;
+  font-size: 18px;
+  line-height: 30px;
+}
+form input:-moz-placeholder {
+  color: #dadada;
+  font-size: 18px;
+  line-height: 30px;
+}
+form input::-moz-placeholder {
+  color: #dadada;
+  font-size: 18px;
+  line-height: 30px;
+}
+form input:-ms-input-placeholder {
+  color: #dadada;
+  font-size: 18px;
+  line-height: 30px;
+}
+form #submit {
+  width: 280px;
+  height: 52px;
+  background: -o-linear-gradient(124deg, #d57407 0, #9f1497 100%);
+  background: linear-gradient(-34deg, #d57407 0, #9f1497 100%);
+  border-radius: 4px;
+  margin: 46px 0 114px 0;
+  position: relative;
+  z-index: 2;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: #ffffff;
+}
+form #submit:disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+form #submit:hover {
+  background: -o-linear-gradient(95.17deg, rgba(213, 116, 7, 0.917286) -11.79%, #9f1497 100.18%);
+  background: linear-gradient(354.83deg, rgba(213, 116, 7, 0.917286) -11.79%, #9f1497 100.18%);
+  opacity: 0.83;
+  -webkit-box-shadow: 0 0 20px rgba(95, 95, 95, 0.5);
+  box-shadow: 0 0 20px rgba(95, 95, 95, 0.5);
+}
+form .choises-box legend {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d8d8f;
+}
+form .choises {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+form .choises .choise {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 12px 8px 40px;
+  -webkit-transition: opacity 0.15s ease-in-out;
+  -o-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #303133;
+  margin-right: 30px;
+}
+form .choises .choise:last-child {
+  margin-right: 0;
+}
+form .choises .choise span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 0;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #dadada;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+form .choises .choise input[type=checkbox] {
+  display: none;
+}
+form .choises .choise input[type=checkbox]:checked + span:before,
+form .choises .choise input[type=checkbox]:checked + span:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1px;
+  margin: auto 0;
+  width: -webkit-calc(102%);
+  width: -webkit-calc(100% + 2px);
+  width: calc(100% + 2px);
+  height: -webkit-calc(102%);
+  height: -webkit-calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+form .choises .choise input[type=checkbox]:checked + span:before {
+  content: '';
+  background: #801095;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+form .choises .choise input[type=checkbox]:checked + span:after {
+  content: "";
+  background-image: url(../img/Fill.svg);
+  width: 13px;
+  height: 10px;
+  text-align: center;
+  line-height: 26px;
+  left: 5px;
+}
+form .form__total {
+  width: 100%;
+  color: #303133;
+  font-weight: 400;
+  font-size: 23.6px;
+  line-height: 26px;
+  margin-top: 80px;
+}
+form .form__total > span {
+  font-weight: bold;
+}
+form .form-info-checkboxes p {
+  width: 100%;
+  min-width: initial;
+}
+form .form-info-checkboxes label {
+  width: -webkit-calc(57%);
+  width: -webkit-calc(100% - 43px);
+  width: calc(100% - 43px);
+  min-width: initial;
+}
+form .form-info-checkboxes {
+  margin-top: 24px;
+  position: relative;
+}
+form .form-info-checkboxes p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  width: 60%;
+  min-width: 545px;
+}
+form .form-info-checkboxes a {
+  text-decoration: underline;
+  color: #1c8bb5;
+}
+form .form-info-checkboxes a:hover {
+  opacity: 0.9;
+}
+form .form-info-checkboxes label {
+  margin-top: 30px;
+  width: 40%;
+  min-width: 360px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 43px;
+  position: relative;
+}
+form .form-info-checkboxes label p {
+  width: 100%;
+  margin: 0;
+  min-width: initial;
+  font-weight: 400;
+  color: #343434;
+}
+form .form-info-checkboxes label p span {
+  color: #a0a0a0;
+  font-weight: 300;
+  position: relative;
+  border: 0;
+}
+form .form-info-checkboxes label span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 0;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #dadada;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+form .form-info-checkboxes label input {
+  width: 43px;
+}
+form .form-info-checkboxes label input[type=checkbox] {
+  display: none;
+}
+form .form-info-checkboxes label input[type=checkbox]:checked + span:after,
+form .form-info-checkboxes label input[type=checkbox]:checked + span:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1px;
+  margin: auto 0;
+  width: -webkit-calc(102%);
+  width: -webkit-calc(100% + 2px);
+  width: calc(100% + 2px);
+  height: -webkit-calc(102%);
+  height: -webkit-calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+form .form-info-checkboxes label input[type=checkbox]:checked + span:before {
+  content: '';
+  background: #801095;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+form .form-info-checkboxes label input[type=checkbox]:checked + span:after {
+  content: "";
+  background-image: url(../img/Fill.svg);
+  width: 13px;
+  height: 10px;
+  text-align: center;
+  line-height: 26px;
+  left: 5px;
+}
+form .form-inner-holder {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+form .choises-fieldsets {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+form .choises-fieldsets fieldset {
+  width: 100%;
+  max-width: 424px;
+}
+form .form-inner-holder .form-inner-wrapper {
+  width: 100%;
+  max-width: 424px;
+}
+#form-result {
+  visibility: hidden;
+}
+#form-result.success {
+  visibility: visible;
+}
+#form-result {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#form-result .modal {
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 5px;
+  z-index: 2;
+  padding: 35px 20px;
+  padding-bottom: 40px;
+}
+#form-result .modal svg {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 35px;
+  width: 70px;
+  height: 70px;
+}
+#form-result .modal p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  max-width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 40px;
+}
+#form-result .modal a.btnMcl {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  height: 41px;
+  margin: 0 auto;
+  background: #06B10D;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17.7031px;
+  line-height: 29px;
+  /* or 162% */
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+#form-result .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+@media screen and (max-width: 600px) {
+  form .form-inner-holder {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  form .form-inner-holder .form-inner-wrapper {
+    max-width: none;
+  }
+  form .choises-box {
+    margin-bottom: 30px;
+  }
+  form .choises-box .choises {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
